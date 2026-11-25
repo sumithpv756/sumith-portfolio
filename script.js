@@ -31,7 +31,13 @@ const projects = {
     ['Pixel Clash','Gaming','assets/poster/poster-17-pixel-clash-gaming.jpg'],
     ['Wedding Invite','Event invitation','assets/poster/poster-18-wedding-invite.jpg'],
     ['Dune Rider','Safari','assets/poster/poster-19-dune-rider-safari.jpg'],
-    ['Zest','Juice bar','assets/poster/poster-20-zest-juice-bar.jpg']
+    ['Zest','Juice bar','assets/poster/poster-20-zest-juice-bar.jpg'],
+    ['Supra','Automotive campaign poster','assets/poster/car.jpg'],
+    ['Lumi','Skincare campaign poster','assets/poster/cream.jpg'],
+    ['Stronger','Fitness supplement poster','assets/poster/jym.jpg'],
+    ['Paranoid','Music festival poster','assets/poster/music.jpg'],
+    ['Dubai Residences','Real estate campaign poster','assets/poster/realestae.jpg'],
+    ['Fresh & Organic','Fresh produce poster','assets/poster/veg.jpg']
   ],
   ui: [
     ['AutoMavil','Travel adventure','assets/UI_UX/AutoMavil_ Drive Your Next Adventure.png'],
@@ -39,7 +45,11 @@ const projects = {
     ['Timeless','Luxury watch store','assets/UI_UX/Timeless Luxury Watch Shop Homepage.png'],
     ['Travel Buddies','Travel app','assets/UI_UX/Travel Buddies App Showcase.png'],
     ['Jewelry','Luxury jewelry','assets/UI_UX/jewry.png'],
-    ['Fresh Vegetables','Food ordering','assets/UI_UX/veg_.jpg']
+    ['Fresh Vegetables','Food ordering','assets/UI_UX/veg_.jpg'],
+    ['Flyora','Travel booking website','assets/UI_UX/booking.jpg'],
+    ['Woodora','Furniture e-commerce website','assets/UI_UX/furniture.jpg'],
+    ['Lernix','Online learning dashboard','assets/UI_UX/learning.jpg'],
+    ['Estately','Real estate website','assets/UI_UX/realestate.jpg']
   ],
   photoshop: [
     ['Creative Retouch','Photoshop artwork','assets/Photoshop/pexels-afterave-essentials-2011504051-29107585.jpg'],
@@ -48,7 +58,26 @@ const projects = {
     ['Editorial Scene','Creative edit','assets/Photoshop/pexels-japy-12760383.jpg'],
     ['Brand Visual','Photo artwork','assets/Photoshop/pexels-onbab-9281786.jpg'],
     ['Studio Campaign','Photo composite','assets/Photoshop/pexels-peppered-pixels-design-studio-1782104880-29297946.jpg'],
-    ['Motion Image','Visual experiment','assets/Photoshop/pexels-pixelsnapvisualz-17721574.jpg']
+    ['Motion Image','Visual experiment','assets/Photoshop/pexels-pixelsnapvisualz-17721574.jpg'],
+    ['Soft Glow','Perfume product photograph','assets/Photoshop/stocksnap-perfume-2574073_1920.jpg'],
+    ['Cool Water','Fragrance product photograph','assets/Photoshop/mkupiec7-perfume-4718458_1920.jpg'],
+    ['Kerala at Dusk','Coastal landscape photograph','assets/Photoshop/mbrajeev-chinese-fishing-nets-10562625_1920.jpg'],
+    ['Portrait Study','Editorial portrait photograph','assets/Photoshop/ambadysasi-portrait-3327510_1920.jpg'],
+    ['Living Tradition','Kathakali makeup photograph','assets/Photoshop/ambadysasi-kerala-4237608_1920.jpg'],
+    ['Pastoral Study','Rural life photograph','assets/Photoshop/ambadysasi-india-3902979_1920.jpg']
+  ],
+  social: [
+    ['Oud Implosion','Fragrance social campaign','assets/socialmedapost/perfume.jpg'],
+    ['Tasty Burger','Food promotion','assets/socialmedapost/burger.jpg'],
+    ['Dubai Escape','Travel campaign','assets/socialmedapost/travel.jpg'],
+    ['Water Refresh','Beverage promotion','assets/socialmedapost/water.jpg'],
+    ['Hydrate Daily','Beverage promotion','assets/socialmedapost/water2.jpg'],
+    ['Pure Hydration','Bottle campaign','assets/socialmedapost/waterbottelk.jpg'],
+    ['Stride Social','Sneaker promotion','assets/socialmedapost/shoe.jpg'],
+    ['Property Showcase','Real estate campaign','assets/socialmedapost/realsteate.jpg'],
+    ['Smart Style','Mobile phone promotion','assets/socialmedapost/pohone.jpg'],
+    ['Fragrance Story','Perfume campaign','assets/socialmedapost/perume.jpg'],
+    ['Learn Online','Course promotion','assets/socialmedapost/onlinecoures.jpg']
   ],
   '3d': [
     ['Object Study 01','3D visual','assets/3d design/pexels-pixelsnapvisualz-17721574.jpg'],
@@ -65,7 +94,7 @@ const projects = {
 function renderProjects(category) {
   const selected = category === 'all'
     ? [...projects.brand, ...projects.poster.slice(0, 8), ...projects.ui,
-       ...projects.photoshop, ...projects['3d']]
+       ...projects.photoshop, ...projects.social.slice(0, 4), ...projects['3d']]
     : projects[category] || [];
 
   projectGrid.innerHTML = selected.map(function(item, index) {
@@ -79,7 +108,7 @@ function renderProjects(category) {
   if (category !== 'all') {
     const note = document.createElement('p');
     note.className = 'gallery-count';
-    const names = {brand:'Branding',poster:'Posters',ui:'UI / UX',photoshop:'Photoshop','3d':'3D Design'};
+    const names = {brand:'Branding',poster:'Posters',ui:'UI / UX',photoshop:'Photoshop',social:'Social media','3d':'3D Design'};
     note.textContent = selected.length + ' projects in ' + names[category];
     projectGrid.before(note);
   }

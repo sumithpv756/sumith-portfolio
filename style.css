@@ -142,7 +142,7 @@ footer{padding:30px 0 50px;color:var(--mut);text-align:center;font-size:15px}
 .discipline-card h3{font-size:32px;margin:8px 0}
 .discipline-card p{color:#bbb8dc}
 .disc-preview{height:330px;position:relative;overflow:hidden}
-.text-link{border:0;background:none;color:#fff;font:700 15px var(--b);padding:8px 0;cursor:pointer}
+.text-link{display:inline-block;border:0;background:none;color:#fff;font:700 15px var(--b);padding:8px 0;cursor:pointer;text-decoration:none}
 .text-link:hover{color:var(--c3)}
 .web-preview{background:var(--c1);padding:28px}
 .web-preview>span{display:block;width:56px;height:7px;border-radius:99px;background:rgba(255,255,255,.7)}
